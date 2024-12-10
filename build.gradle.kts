@@ -1,6 +1,6 @@
 plugins {
-	id("fabric-loom") version "1.8-SNAPSHOT"
-	id("legacy-looming") version "1.8-SNAPSHOT" // Version must be the same as fabric-loom's
+	id("fabric-loom") version "1.9-SNAPSHOT"
+	id("legacy-looming") version "1.9-SNAPSHOT" // Version must be the same as fabric-loom's
 }
 
 base {
@@ -48,10 +48,10 @@ tasks {
 
 		inputs.properties(projectProperties)
 
+		filteringCharset = "UTF-8"
+
 		filesMatching("fabric.mod.json") {
-			expand(projectProperties) {
-				escapeBackslash = true
-			}
+			expand(projectProperties)
 		}
 	}
 
